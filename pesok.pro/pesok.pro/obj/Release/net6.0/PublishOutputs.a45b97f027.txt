@@ -1,0 +1,7 @@
+E:\-=Сайты=-\Pesok\pesok.pro\pesok.pro\obj\Release\net6.0\PubTmp\Out\pesok.pro.exe
+E:\-=Сайты=-\Pesok\pesok.pro\pesok.pro\obj\Release\net6.0\PubTmp\Out\appsettings.Development.json
+E:\-=Сайты=-\Pesok\pesok.pro\pesok.pro\obj\Release\net6.0\PubTmp\Out\appsettings.json
+E:\-=Сайты=-\Pesok\pesok.pro\pesok.pro\obj\Release\net6.0\PubTmp\Out\pesok.pro.dll
+E:\-=Сайты=-\Pesok\pesok.pro\pesok.pro\obj\Release\net6.0\PubTmp\Out\pesok.pro.deps.json
+E:\-=Сайты=-\Pesok\pesok.pro\pesok.pro\obj\Release\net6.0\PubTmp\Out\pesok.pro.runtimeconfig.json
+E:\-=Сайты=-\Pesok\pesok.pro\pesok.pro\obj\Release\net6.0\PubTmp\Out\pesok.pro.pdb
