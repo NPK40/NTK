@@ -18,6 +18,11 @@ namespace pesok.pro.Controllers
             return View();
         }
 
+        public IActionResult Price()
+        {
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

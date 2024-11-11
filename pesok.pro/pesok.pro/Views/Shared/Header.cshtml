@@ -3,7 +3,42 @@
 *@
 @{
 }
+<style>
+    .gradBut {
+        background: #ff5e14; /* Для старых браузров */
+        background: linear-gradient(-135deg, transparent 15px, #ff5e14 0);
+        color: #ffefe8;
+        border: 0;
+    }
 
+        .gradBut:hover {
+            background: #fc5203; /* Для старых браузров */
+            background: linear-gradient(-135deg, transparent 15px, #fc5203 0);
+            color: #fff;
+            border: 0;
+        }
+
+    .NameUsugi:hover {
+        box-shadow: inset 8px 8px 20px -10px #ff5e14;
+    }
+
+    .linkPr {
+        font-family: OpenSansMedium;
+        color: #ff5e14;
+    }
+
+        .linkPr:hover {
+            color: #fff;
+        }
+
+
+
+    #rectangle {
+        width: 10px;
+        height: 10px;
+        background: #ff5e14;
+    }
+</style>
 <div class="bg-no-repeat bg-center header_h mt-0 lg:mt-0" style="background-image: url('/Image/Page/topHeaderImg.webp');">
     <div id="header2" class="container mx-auto ">
         <div class="hidden lg:block">
@@ -41,6 +76,9 @@
                 </div>
             </div>
         </div>
+         <div class="mt-0 lg:mt-28">
+            @await Html.PartialAsync("Nav")
+         </div>
         <div class="grid gap-5 grid-cols-1 lg:grid-cols-3 w-full  lg:mt-24 xl:mt-24 px-5 lg:px-0">
             <div class="col-span-2 mt-20 lg:mt-0 ">
                 <div class="text-3xl lg:text-5xl  xl:text-8xl leading-none pr-10 lg:pr-0 lowercase" style="font-family:BebasNeueBold;color:#e0e0e3;">

@@ -1,0 +1,72 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<style>
+	nav {
+		border-bottom: 1px solid rgba(42,41,46,0.1);
+		font-weight: 300;
+		
+	}
+
+	.mn ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	/* clearfix */
+.mn	ul::after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+
+.mn	li {
+		display: block;
+		float: left;
+	}
+
+#menu a, .mn	a  {
+		text-decoration: none;
+		padding: 1.1em 1.5em;
+		display: block;
+		font-size: 24pt;
+		font-family:BebasNeueRegular;
+		color: #e0e0e3;
+	}
+
+	.LatsMenu {color: rgb(234 88 12) !important; font-family: BebasNeueRegular;font-size: 16pt;padding-right: 2em;cursor: pointer;}
+    .LatsMenu:hover {color: #fff !important;;}
+	.selected {color: rgb(250 250 250) !important}
+	#menu a {font-size: 16pt;padding: 0.5em 1.8em 0.5em 0em}
+	#menu a:hover {color:#ff5e14;}
+    #menu .phoneM a {font-size: 18pt;padding: 0.15em 1.8em 0.15em 0em}
+	
+	.bg_nav li a {color:#b6b6b6;}
+	.bg_nav li a:hover {color:#fff;}
+
+	media (min-width: 1024px) {.mn a {font-size: 18pt;padding: 1.1em 1.3em 1.1em 0em;}}
+media (min-width: 1280px) {.mn a {font-size: 20pt;padding: 1.1em 1.8em 1.1em 0em;}}
+
+</style>
+
+<div class="bg_nav ">
+	<nav class="h-16 lg:h-24  bg_nav z-50 w-full" style="z-index:500;">
+		<div class="container">
+			<div class="hidden lg:block mn">
+				<ul>
+					<li><a class='{LinkRazdel === "about" ? "selected" : ""}' href="{base}/about">O КОМПАНИИ </a></li>
+					<li><a class='{LinkRazdel === "catalog" ? "selected" : ""}' href="/catalog/sand">КАТАЛОГ</a></li>
+					<li><a class='{LinkRazdel === "service" ? "selected" : ""}' href="/service/plot_filling">УСЛУГИ</a></li>
+					<li><a class='{LinkRazdel === "price" ? "selected" : ""}' href="home/price">ЦЕНЫ</a></li>
+					<li><a class='{LinkRazdel === "cooperation" ? "selected" : ""}' href="{base}/cooperation">СОТРУДНИЧЕСТВО</a></li>
+					<li><a class='{LinkRazdel === "article" ? "selected" : ""}' href="{base}/article">СТАТЬИ</a></li>
+					<li><a class='{LinkRazdel === "contacts" ? "selected" : ""}' href="{base}/contacts">КОНТАКТЫ</a></li>
+
+				</ul>
+			</div>
+		
+		</div>
+	</nav>
+</div>

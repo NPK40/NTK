@@ -10,6 +10,14 @@
     <UpToDateCheckBuilt Include="wwwroot/css/site.css" Set="Css" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Shared\Navigation\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.18" />
+  </ItemGroup>
+
   <Target Name="Tailwind" BeforeTargets="Build">
     <Exec Command="npm run css:build" />
   </Target>

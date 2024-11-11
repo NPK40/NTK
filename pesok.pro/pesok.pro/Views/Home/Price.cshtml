@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewData["Title"] = "Цены на нашу продукцию";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+  .pageContent h1  {font-family: BebasNeueRegular; font-size: 40px; color:#505164;padding: 0em 0em 0.5em 0em; text-align: left;}
+  .pageContent h2  {font-family: BebasNeueRegular; font-size: 32px; color:#505164; padding: 0.7em 0em 0.5em 0em}
+  .pageContent h3 {font-family: OpenSansBold; font-size: 20px; color:#555;padding: 0.7em 0em 0.5em 0em}
+  .pageContent p {font-family: OpenSansRegular; font-size: 17px; color:#292c48;text-align:justify;padding: 0.4em 0em; line-height: 1.9;}
+  .pageContent ul  {font-family: OpenSansRegular; font-size: 16px; color:#333;text-align:justify; line-height: 1.7; list-style-image: url('/image/kv.png') ; padding-left: 3em;}
+  .pageContent li  { padding: 0.4em 0em   0.4em 0.9em;}
+  .pageContent .table_price {width:100%;margin: 2em 0em;}
+  .pageContent .table_price th  {background-color:#ff5e14; color:#fff;font-family: BebasNeueRegular;padding: 0.5em 2em;font-weight: 300;}
+  .pageContent .table_price td {background-color:#fff; color:#000;font-family: OpenSansRegular;padding: 0.4em 1em 0.4em 1em;font-weight: 300;}
+  .pageContent .table_price td:nth-child(2n) {text-align: right;}
+  .pageContent .table_price th:nth-child(2n+1) span {float:left;}
+  .pageContent .table_price tr:nth-child(2n) td {background-color:#f6f6f6;}
+  
+  </style>
+
+<div class="px-5 lg:px-0">
+
+<div class="bg-white  mt-12 lg:mt-10"  >
+  <div  class="container pageContent mx-auto mb-24 ">
+      <h1>Прайсовые цены на продукцию</h1>
+      <p>Компания «НПК» предлагает обширный выбор сыпучих строительных материалов на выгодных условиях. Работаем напрямую с производителями, имеем собственный карьер по добыче щебня, поэтому можем предложить лучшие цены на сыпучие материалы в регионе. Ознакомиться с полным перечнем и стоимостью нашей продукции можно в соответствующем разделе сайта. Прайс-лист содержит информацию о цене за кубический метр с доставкой в пределах города Калуга. </p>
+      <div style="color:#ff5e14;font-family:OpenSansBold;" class="text-lg underline decoration-1">Скачать прайс-лист</div>
+      <table class="table_price">
+          <tr><th ><span class="text-2xl">СТРОИТЕЛЬНЫЙ ПЕСОК</span></th><th></th></tr>
+          <tr><td>Строительный(карьерный)</td><td>390 руб./м<sup>3</sup></td></tr>
+          <tr><td>Намывной (речной)</td><td>460 руб./м<sup>3</sup></td></tr>
+          <tr><td>Сеяный</td><td>560 руб./М<sup>3</sup></td></tr>
+          <tr><td>Супесь (глинистый)</td><td>370 руб./м<sup>3</sup></td></tr>
+          <tr><th ><span class="text-2xl float-left">ЩЕБЕНЬ ИЗВЕСТНЯКОВЫЙ</span></th><th></th></tr>
+           <tr><td>Фракция 5-20</td><td>960 руб./м<sup>3</sup></td></tr>
+           <tr><td>Фракция 5-40</td><td>960 руб./м<sup>3</sup></td></tr>
+           <tr><td>Фракция 20-40</td><td>980 руб./м<sup>3</sup></td></tr>
+           <tr><td>Фракция 40-70</td><td>980 руб./м<sup>3</sup></td></tr>
+           <tr><td>Фракция 70-120</td><td>980 руб./м<sup>3</sup></td></tr>
+           <tr><th><span class="text-2xl">ЩЕБЕНЬ ГРАВИЙНЫЙ</span></th><th></th></tr>
+              <tr><td>Фракция 3-10</td><td>1150 руб./тн</td></tr>
+           <tr><td>Фракция 5-20</td><td>1080 руб./тн</td></tr>
+           <tr><td>Фракция 20-40</td><td>1080 руб./тн</td></tr>
+           <tr><td>Фракция 40-70</td><td>1080 руб./тн</td></tr>
+           <tr><td>Нефракционный</td><td>1300 руб./тн</td></tr>
+           <tr><th><span class="text-2xl">ЩЕБЕНЬ ГРАНИТНЫЙ</span></th><th></th></tr>
+           <tr><td>Фракция 5-10</td><td>1900 руб./тн</td></tr>
+           <tr><td>Фракция 5-20</td><td>1850 руб./тн</td></tr>
+           <tr><td>Фракция 20-40</td><td>1700 руб./тн</td></tr>
+           <tr><td>Фракция 40-70</td><td>1750 руб./тн</td></tr>
+           <tr><th ><span class="text-2xl">Песчано-гравийная смесь</span></th><th></th></tr>
+           <tr><td>ПГС</td><td>700 руб./м<sup>3</sup></td></tr>
+           <tr><th><span class="text-2xl">КЕРАМЗИТ</span></th><th></th></tr>
+           <tr><td>Керамзит 5-10</td><td>1600 руб./м<sup>3</sup></td></tr>
+           <tr><td>Керамзит 10-20</td><td>1600 руб./м<sup>3</sup></td></tr>
+           <tr><th><span class="text-2xl">ПЛОДОРОДНЫЙ СЛОЙ</span></th><th></th></tr>
+           <tr><td>Грунт</td><td>460 руб./м<sup>3</sup></td></tr>
+           <tr><td>Чернозем</td><td>1250 руб./тн</td></tr>
+           <tr><td>Торф</td><td>950 руб./м<sup>3</sup></td></tr>
+      </table>
+      <div class="grid grid-cols-6 gap-2 mb-4">
+          <div class="col-start-4 col-span-3 text-base leading-snug" style="font-family:OpenSansItalic; color:#000; font-bold;">*Цены указаны с учетом доставки в пределах г. Калуги. Доставляем от 10 м<sup>3</sup> собственным автопарком</div>
+        </div>
+      <h2>Наш ассортимент</h2>
+      <p>Каталог продукции включает:</p>
+      <ul>
+          <li>	Щебень. Реализуется щебень нескольких фракций, в числе которых — 5-20, 20-40, 40-70. Материал используется для строительства зданий, сооружений различного назначения, для отделки, в ландшафтном дизайне и дорожных работах. Наш щебень — прочный, экологически чистый, морозоустойчивый материал. Возводимые из него сооружения отличаются долговечной эксплуатацией. </li>
+          <li>	Минеральный порошок. Обязательный компонент для производства асфальта и бетона. Он наделяет конечный продукт повышенной механической прочностью, способностью к деформациям, делает его однородным и улучшает другие его эксплуатационные свойства.</li>
+          <li>	ЩПС. Смесь и щебня и песка образуется естественным путём в процессе выветривания пород. Качественный сыпучий строительный материал должен иметь строгие пропорции обоих компонентов, в соответствии с требованиями ГОСТ. Необходим при производстве асфальта, при строительстве зданий, в дорожных работах.</li>
+      </ul>
+      <p>Вся продукция имеет сертификаты, подтверждающие качество и сопровождается другой необходимой документацией.</p>
+      <h3>Сделать заказ сыпучих строительных материалов в «НПК»</h3>
+      <p>Для приобретения нашей продукции в любых объемах достаточно связаться с нашими менеджерами по телефону или заполнить специальную форму на сайте.  </p>
+      <p>Компания «НПК» предлагает заказать небольшую партию щебня или другого материала для выполнения маломасштабных работ или оформить договор на постоянные оптовые поставки. Доставляем товар по городу, в область и близлежащие регионы. </p>
+      <p>Благодаря наличию собственного автопарка и службы логистики, мы доставляем заказ быстро, а цена продукции с доставкой доступна многим категориям заказчиков.</p>
+      <p>Работаем в данном сегменте рынка не первый год, поэтому обладаем необходимыми знаниями и опытом. За это время мы заслужили репутацию надёжного поставщика, сотрудничать с которым удобно и выгодно.  </p>
+  </div>
+</div>
+</div>
+
