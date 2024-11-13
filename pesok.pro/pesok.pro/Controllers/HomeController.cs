@@ -38,8 +38,15 @@ namespace pesok.pro.Controllers
             return View();
         }
 
-       
-  
+        
+
+       [Route("Contacts")]
+        public IActionResult Contacts()
+        {
+
+
+            return View();
+        }
 
 
 
