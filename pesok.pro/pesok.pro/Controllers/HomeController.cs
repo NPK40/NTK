@@ -18,22 +18,30 @@ namespace pesok.pro.Controllers
             return View();
         }
 
+        [Route("Price")]
         public IActionResult Price()
         {
             return View();
         }
 
+        [Route("Cooperation")]
         public IActionResult Cooperation()
         {
             return View();
         }
 
+        [Route("About")]
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            
 
             return View();
         }
+
+       
+  
+
+
 
         public IActionResult Privacy()
         {

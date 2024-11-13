@@ -210,3 +210,5 @@ E:\-=Сайты=-\Pesok\pesok.pro\pesok.pro\bin\Debug\net6.0\zh-Hant\Microsoft.C
 E:\-=Сайты=-\Pesok\pesok.pro\pesok.pro\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
 E:\-=Сайты=-\Pesok\pesok.pro\pesok.pro\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 E:\-=Сайты=-\Pesok\pesok.pro\pesok.pro\obj\Debug\net6.0\pesok.pro.csproj.CopyComplete
+E:\-=Сайты=-\Pesok\pesok.pro\pesok.pro\obj\Debug\net6.0\scopedcss\Views\Shared\Navigation\_Layout.cshtml.rz.scp.css
+E:\-=Сайты=-\Pesok\pesok.pro\pesok.pro\obj\Debug\net6.0\scopedcss\Views\Shared\_LayoutTWO.cshtml.rz.scp.css

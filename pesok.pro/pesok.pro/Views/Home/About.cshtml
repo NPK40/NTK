@@ -1,9 +1,87 @@
 ﻿@page
 @model pesok.pro.Views.Home.AboutModel
 @{
-    ViewBag.Title = "About";
+    ViewBag.Title = "О Компании НПК Карьер";
+    Layout = "~/Views/Shared/_LayoutTWO.cshtml";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<style>
+    .pageContent h1 {
+        font-family: BebasNeueRegular;
+        font-size: 40px;
+        color: #505164;
+        padding: 0em 0em 0.5em 0em;
+        text-align: left;
+    }
+
+    .pageContent h2 {
+        font-family: BebasNeueRegular;
+        font-size: 32px;
+        color: #505164;
+        padding: 0.7em 0em 0.5em 0em
+    }
+
+    .pageContent h3 {
+        font-family: OpenSansBold;
+        font-size: 20px;
+        color: #555;
+        padding: 0.7em 0em 0.5em 0em
+    }
+
+    .pageContent p {
+        font-family: OpenSansRegular;
+        font-size: 17px;
+        color: #292c48;
+        text-align: justify;
+        padding: 0.4em 0em;
+        line-height: 1.9;
+    }
+
+    .pageContent ul {
+        font-family: OpenSansRegular;
+        font-size: 16px;
+        color: #333;
+        text-align: justify;
+        line-height: 1.7;
+        list-style-image: url('/image/kv.png');
+        padding-left: 3em;
+    }
+
+    .pageContent li {
+        padding: 0.4em 0em 0.4em 0.9em;
+    }
+    /* .pageContent .table_price {width:100%;margin: 2em 0em;}
+       .pageContent .table_price th  {background-color:#ff5e14; color:#fff;font-family: BebasNeueRegular;padding: 0.5em 2em;font-weight: 300;}
+       .pageContent .table_price td {background-color:#fff; color:#000;font-family: OpenSansRegular;padding: 0.4em 4em 0.4em 2em;font-weight: 300;}
+       .pageContent .table_price td:nth-child(2n) {text-align: right;}
+       .pageContent .table_price th:nth-child(2n+1) span {float:left;}
+       .pageContent .table_price tr:nth-child(2n) td {background-color:#f6f6f6;}*/
+
+</style>
+<div class="px-5 lg:px-0">
+ 
+    <div class="bg-white  mt-12 lg:mt-10">
+        <div class="container pageContent mx-auto mb-24">
+            <h1>О Компании</h1>
+            <p>Компания «НПК» — поставщик сыпучих нерудных материалов, используемых помимо строительства, в сооружении дорожных магистралей, а также в ландшафтном дизайне. Работаем в Калуге и области, близлежащих регионах. В перечень наших преимуществ входит обширный выбор продукции, доступные цены и высокое качество сервиса.  </p>
+            <h2>Преимущества сотрудничества с «НПК Калуга»</h2>
+            <p>Любой покупатель ищет надёжного партнёра — знающего своё дело, опытного, отвечающего за качество своей продукции и нацеленного на долгосрочное сотрудничество. Выбирая нашу компанию, вы получаете:</p>
+            <ul>
+                <li>помощь в подборе материалов, подходящих по цене и для реализации конкретных задач;</li>
+                <li>быструю доставку — собственный автопарк и профессионально организованная служба логистики позволяет выполнять транспортировку строительных материалов в максимально короткие сроки;</li>
+                <li>самые доступные цены на продукцию высокого качества;</li>
+                <li>полный пакет сопроводительных документов и сертификатов, подтверждающих соответствие товара заявленным характеристикам;</li>
+                <li>сотрудничество на основании официального договора.</li>
+            </ul>
+            <p>Для оценки качества продукции мы предоставляем бесплатные образцы. </p>
+            <p>Работая в данном сегменте рынка не первый год, мы заслужили положительную репутацию и зарекомендовали себя, как надёжный партнёр, который неукоснительно соблюдает все условия сотрудничества. Мы полностью отвечаем за качество поставляемой нами продукции, не срываем сроков поставок, гарантируем сохранность в процессе транспортировки. </p>
+            <h3>«НПК Калуга» — нам можно доверять</h3>
+            <p>Свыше 1000 довольных заказчиков — лучшее доказательство успешной деятельности. Многие из них сотрудничают с «НПК» на постоянной основе, решая комплексные задачи строительства. Обширный выбор материалов позволяет нам максимально удовлетворять потребности клиентов — им не приходится тратить время на поиск конкретного товара. </p>
+            <p>«НПК» — все материалы для строительства и ландшафтного дизайна в одном месте по доступным ценам. Постоянные заказчики работают с нами на самых выгодных условиях, заключая контракты на поставку продукции с хорошими скидками. </p>
+            <p>Каждый клиент может рассчитывать на индивидуальный подход — мы персонально рассчитываем стоимость в зависимости от объёма приобретаемой продукции, дальности транспортировки и сроков. </p>
+            <p><strong> Нерудные строительные материалы от «НПК» — образец качества, безопасности и надёжности. </strong></p>
+        </div>
+    </div>
+</div>
+
+
