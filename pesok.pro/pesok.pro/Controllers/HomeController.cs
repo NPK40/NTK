@@ -23,6 +23,11 @@ namespace pesok.pro.Controllers
             return View();
         }
 
+        public IActionResult Cooperation()
+        {
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
