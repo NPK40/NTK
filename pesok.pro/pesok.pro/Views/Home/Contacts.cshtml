@@ -1,0 +1,176 @@
+﻿
+@{
+    ViewData["Title"] = "Контактная информация компании ООО";
+    Layout = "~/Views/Shared/_LayoutTWO.cshtml";
+}
+
+<style>
+    .Header1 {
+        font-family: BebasNeueRegular;
+        font-size: 40px;
+        color: #505164;
+        padding: 0em 0em 0.5em 0em;
+        text-align: left;
+    }
+
+    #ymap {
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+        height: 600px;
+    }
+
+    .kontakt {
+        margin: 3em 0em 3em 0em;
+        display: table;
+        width: 300px;
+    }
+
+        .kontakt img {
+            margin-top: 0.3em;
+        }
+
+        .kontakt .des-phone {
+            display: table-cell;
+            text-align: left;
+            width: 250px;
+            vertical-align: top;
+        }
+
+            .kontakt .des-phone .text_header {
+                font-family: OpenSansRegular;
+                font-size: 17px;
+                color: #434559;
+            }
+
+            .kontakt .des-phone .text_adres {
+                font-family: BebasNeueRegular;
+                font-size: 22px;
+                color: #434559;
+                margin-top: 0.2em;
+            }
+</style>
+<div class="px-0">
+
+    <div class="bg-white  mt-8 lg:mt-10">
+        <div class="container mx-auto ">
+
+            <h1 class="Header1">КОНТАКТЫ</h1>
+            <div class="grid gap-0 grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 mb-24">
+                <div class="col-span-1">
+                    <div class="px-1">
+                        <div class="kontakt">
+                            <img alt="Телефон" src="/image/Contact/phone.png" />
+                            <div class="des-phone">
+                                <div class="text_header">Наши телефоны</div>
+                                <div class="text_adres">+7 (930) 849-50-50</div>
+
+                            </div>
+                        </div>
+                        <div class="kontakt">
+                            <img alt="Адрес" src="/image/Contact/Metka.png">
+                            <div class="des-phone">
+                                <div class="text_header">Адрес офиса</div>
+                                <div class="text_adres">248031, г. Калуга, пер. Дальний, д.11</div>
+
+                            </div>
+                        </div>
+
+                        <div class="kontakt">
+                            <img alt="Email" src="/image/Contact/email.png" />
+                            <div class="des-phone">
+                                <div class="text_header">Электронная почта</div>
+                                <div class="text_adres underline" style="color:#fc5203;">npk40@yandex.ru</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-span-1 sm:col-span-1 lg:col-span-2" style="padding:0px;">
+                    <div class="p-0 " style="height:630px;">
+                        <div id="ymap"></div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+   
+    let myMap;
+    let myGeoObject;
+
+
+    onMount(async () => {
+        setTimeout(init, 500);
+
+
+    });
+
+    //  ymaps.ready(init);
+    function init() {
+        // Создание карты.
+        myMap = new ymaps.Map("ymap", {
+            // Координаты центра карты.
+            // Порядок по умолчанию: «широта, долгота».
+            // Чтобы не определять координаты центра карты вручную,
+            // воспользуйтесь инструментом Определение координат.
+            center: [54.5982, 36.2550],
+            // Уровень масштабирования. Допустимые значения:
+            // от 0 (весь мир) до 19.
+            zoom: 17
+        });
+
+        myGeoObject = new ymaps.GeoObject({
+            geometry: {
+                type: "Point", // тип геометрии - точка
+                coordinates: [54.5982, 36.2550] // координаты точки
+            }, properties: {
+                hintContent: "Калуга"
+            }
+        }, {
+            // Включаем отображение в форме геодезических кривых.
+            geodesic: true,
+            // Задаем ширину в 5 пикселей.
+            strokeWidth: 5,
+            // Задаем цвет линии.
+            strokeColor: "#666"
+        });
+        myMap.geoObjects.add(myGeoObject);
+        myMap.balloon.open(myMap.getCenter(), {
+            contentBody: '<strong>пер. Дальний, д.11</strong>',
+            //  contentHeader: 'ООО КАРЬЕР',
+            //  contentBody:
+
+        },
+            {
+                // Опции балуна. В данном примере указываем, что балун не должен иметь кнопку закрытия.
+                closeButton: false,
+                preset: 'islands#yellowDotIcon',
+                panelMaxMapArea: 0
+
+            });
+
+
+
+        fitMapToViewport();
+
+
+    }
+
+
+
+    function fitMapToViewport() {
+        var mapi = document.getElementById('ymap');
+        mapi.style.height = 1;
+
+        // Вызываем перерасчет размеров контейнера карты.
+        // Это может происходить автоматически при помощи опции autoFitToViewport
+        // http://api.yandex.ru/maps/doc/jsapi/beta/ref/reference/Map.xml#param-options.autoFitToViewport
+        //   map.container.fitToViewport();
+    }
+</script>  

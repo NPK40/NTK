@@ -1,0 +1,202 @@
+@tailwind base;
+
+:root {
+    font-family: Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    --font-mono: "Fira Mono", monospace;
+    --pure-white: #ffffff;
+    --primary-color: #ffffff;
+    --secondary-color: #ffffff;
+    --tertiary-color: #ffffff;
+    --accent-color: #ff5e14;
+    --heading-color: rgba(0, 0, 0, 0.7);
+    --text-color: #444444;
+    --background-without-opacity: rgba(255, 255, 255, 0.7);
+    --column-width: 42rem;
+    --column-margin-top: 4rem;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    background-color: var(--primary-color);
+    background: linear-gradient( 180deg, var(--primary-color) 0%, var(--secondary-color) 10.45%, var(--tertiary-color) 41.35% );
+}
+
+    body::before {
+        content: "";
+        width: 80vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 10vw;
+        z-index: -1;
+        background: radial-gradient( 50% 50% at 50% 50%, var(--pure-white) 0%, rgba(255, 255, 255, 0) 100% );
+        opacity: 0.05;
+    }
+
+#svelte {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1,
+h2,
+p {
+    font-weight: 400;
+    color: var(--heading-color);
+}
+
+p {
+    line-height: 1.5;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+h1 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1rem;
+}
+
+pre {
+    font-size: 16px;
+    font-family: var(--font-mono);
+    background-color: rgba(255, 255, 255, 0.45);
+    border-radius: 3px;
+    box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);
+    padding: 0.5em;
+    overflow-x: auto;
+    color: var(--text-color);
+}
+
+input,
+button {
+    font-size: inherit;
+    font-family: inherit;
+}
+
+    button:focus:not(:focus-visible) {
+        outline: none;
+    }
+
+@media (min-width: 720px) {
+    h1 {
+        font-size: 2.4rem;
+    }
+}
+
+@font-face {
+    font-family: DINProCondensedRegular;
+    src: url('/fonts/DINPro-CondensedRegular.woff') format("woff");
+}
+
+@font-face {
+    font-family: DINProCondensedMedium;
+    src: url('/fonts/DINPro-CondensedMedium.woff') format("woff");
+}
+
+@font-face {
+    font-family: DINProCondensedBold;
+    src: url('/fonts/DINPro-CondensedBold.woff') format("woff");
+}
+
+@font-face {
+    font-family: DINProCondensedBlack;
+    src: url('/fonts/DINPro-CondensedBlack.woff') format("woff");
+}
+
+@font-face {
+    font-family: OpenSansLight;
+    src: url('/fonts/open-sans-light.woff') format("woff");
+}
+
+@font-face {
+    font-family: OpenSansMedium;
+    src: url('/fonts/OpenSans-Medium.woff') format("woff");
+}
+
+@font-face {
+    font-family: OpenSansBold;
+    src: url('/fonts/OpenSans-Bold.woff') format("woff");
+}
+
+@font-face {
+    font-family: OpenSansSemiBold;
+    src: url('/fonts/OpenSans-SemiBold.woff') format("woff");
+}
+
+@font-face {
+    font-family: OpenSansItalic;
+    src: url('/fonts/OpenSans-Italic.woff') format("woff");
+}
+
+@font-face {
+    font-family: OpenSansRegular;
+    src: url('/fonts/OpenSans-Regular.woff') format("woff");
+}
+
+@font-face {
+    font-family: BebasNeueLight;
+    src: url('/fonts/BebasNeueLight.woff') format("woff");
+}
+
+@font-face {
+    font-family: BebasNeueRegular;
+    src: url('/fonts/BebasNeueRegular.woff') format("woff");
+}
+
+@font-face {
+    font-family: BebasNeueBold;
+    src: url('/fonts/BebasNeueBold.woff') format("woff");
+}
+
+.gradBut {
+    background: #ff5e14; /* Для старых браузров */
+    background: linear-gradient(-135deg, transparent 15px, #ff5e14 0);
+    color: #ffefe8;
+    border: 0;
+}
+
+    .gradBut:hover {
+        background: #fc5203; /* Для старых браузров */
+        background: linear-gradient(-135deg, transparent 15px, #fc5203 0);
+        color: #fff;
+        border: 0;
+    }
+
+.NameUsugi:hover {
+    box-shadow: inset 8px 8px 20px -10px #ff5e14;
+}
+
+.linkPr {
+    font-family: OpenSansMedium;
+    color: #ff5e14;
+}
+
+    .linkPr:hover {
+        color: #fff;
+    }
+
+
+
+#rectangle {
+    width: 10px;
+    height: 10px;
+    background: #ff5e14;
+}
+
+@tailwind components;
+@tailwind utilities;
+
+

@@ -1,0 +1,94 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<style>
+.header_h {height: 1191px;}
+.Header1 {font-family: BebasNeueRegular; font-size:55px ; color:#fff;}
+
+.gradBut{background: #ff5e14; /* Для старых браузров */background:linear-gradient(-135deg, transparent 15px, #ff5e14 0);color:#ffefe8;border:0; }
+.gradBut:hover {background: #fc5203; /* Для старых браузров */background:linear-gradient(-135deg, transparent 15px, #fc5203 0);color:#fff;border:0;}
+media (min-width: 400px) {.header_h {height: 1100px;}}
+media (min-width: 1024px) {.header_h {height: 1191px;}}
+media (min-width: 1248px) {.header_h {height: 900px;}}
+</style>
+<div class="bg-no-repeat bg-center header_h mt-0 lg:mt-0" style="background-image: url('/image/Page/Sotrud.webp');" >
+    <div id="header2" class="container mx-auto ">
+        <div class="text-center pt-24 lg:pt-68">
+           <h1 class="Header1 leading-tight">Заявка <br> на сотрудничество</h1>
+           <p class="mt-8 text-lg leading-8" style="font-family:OpenSansLight;color: #bbbdc7;">Оставьте свои контактные данные <br>и мы подберем для Вас выгодное предложение</p>
+           <div class="grid gap-12 grid-cols-1 lg:grid-cols-3 w-4/6 mt-20 mx-auto">
+              <div class="col-span-1">
+                  <div style="color: #bbbdc7; font-family: OpenSansItalic;">Ваше имя</div>
+                  <input class="text-white border-b w-64 mt-4 h-12" type="text" style="background: rgba(108, 110, 134, 0.01);font-family: OpenSansRegular;" bind:value={Message.Name}  placeholder="Ваше имя*">
+              </div>
+              <div class="col-span-1">
+                  <div style="color: #bbbdc7;font-family: OpenSansItalic;">Номер телефона</div>
+                  <input class="text-white border-b w-64 mt-4 h-12" type="text" style="background: rgba(108, 110, 134, 0.01);font-family: OpenSansRegular;" bind:value={Message.Phone} use:imask={options}    name="phone"  on:accept={accept} placeholder="Телефон">
+              </div>
+              <div class="col-span-1">
+                  <div style="color: #bbbdc7;font-family: OpenSansItalic;">Электронная почта</div>
+                  <input class="text-white border-b w-64 mt-4 h-12" type="text" style="background: rgba(108, 110, 134, 0.01);font-family: OpenSansRegular;" bind:value={Message.Email}  placeholder="Электронная почта*">
+              </div>
+           </div>
+           <div class="mt-28">
+              <div  on:click={SentMessage} class="text-xl border  px-10 py-6 lg:px-14 lg:py-6 gradBut inline" style="font-family:OpenSansMedium;">Отправить заявку</div> 
+              <p class="mt-8 text-lg mt-20" style="font-family:OpenSansLight;color: #bbbdc7;">Или позвоните нам по телефону</p>
+              <p class="text-4xl mt-5" style="color:#ff5e14;font-family: BebasNeueBold;">+7 (930) 849-50-50</p>
+           </div>  
+        </div>
+    </div>
+</div>
+
+
+<script>
+	import { imask} from 'svelte-imask';
+
+	const options = { 
+		mask: '+{7}(000)000-00-00' 
+	};
+
+	function accept() {
+		console.log('accepted');
+	}
+
+
+
+  let Name = "";
+  let Phone = "";
+	let Message= {
+	  Name: "",
+    Phone: "",
+    Email: "",
+    Text: "",
+    Type: "Сотрудничество"
+  };
+  
+
+
+  async function SentMessage()
+   {
+
+    let options = {
+  method: 'POST',
+  body: JSON.stringify(Message),
+  headers: {
+   'Content-Type': 'application/json;charset=utf-8',
+  }};
+  console.log(Message.Phone.length);
+  if (Message.Text.length != 0 && Message.Name.length!=0 && Message.Email.length!=0 && Message.Email.indexOf('@@')!=-1 )
+  {
+   let data =await  fetch('https://mail.pgs40.ru/api/mes', options)
+  .then(res =>  res.json())
+  .then(res => console.log(res));
+  Message.Phone = "";
+  Message.Name = "";
+  Message.Text = "";
+  Message.Email = "";
+   }
+   else {
+        alert("Пожалуйста, укажите корректные данные");
+   }
+   }
+</script>

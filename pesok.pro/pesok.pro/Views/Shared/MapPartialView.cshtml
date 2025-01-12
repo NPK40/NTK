@@ -1,0 +1,119 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@* <div id="ymap"></div> *@
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="yandex-verification" content="ab6778d2ad150155" />
+    <meta content="width=device-width,initial-scale=0.8" name=viewport>
+    <script src="https://api-maps.yandex.ru/2.1.79?apikey=0e54ceec-942a-4798-99ae-acf8e37a0bc8&lang=ru_RU" type="text/javascript"></script>
+
+@* <div id="ymap"><iframe src="https://maps.app.goo.gl/Ry4rN2JxeHGdpXhu6"</iframe>></div> *@
+@* <div id="ymap"><iframe src="https://yandex.ru/maps/6/kaluga/?ll=36.255619%2C54.598127&mode=poi&poi%5Bpoint%5D=36.254935%2C54.598111&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D1205523884&tilt=0.8726646259971648&z=19.2"</iframe>></div> *@
+<div id="ymap"><iframe height="600" width="1000" src="https://openstreetmap.ru/#mmap=19/54.59819/36.25511&map=19/54.5982/36.25506"</iframe>></div>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(94748716, "init", {
+             clickmap:true,
+             trackLinks:true,
+             accurateTrackBounce:true,
+             webvisor:true
+        });
+
+
+
+
+
+
+
+
+        let myMap;
+        let myGeoObject;
+
+
+        onMount(async () => {
+            setTimeout(init, 500);
+
+
+        });
+
+        //  ymaps.ready(init);
+        function init() {
+            // Создание карты.
+            myMap = new ymaps.Map("ymap", {
+                // Координаты центра карты.
+                // Порядок по умолчанию: «широта, долгота».
+                // Чтобы не определять координаты центра карты вручную,
+                // воспользуйтесь инструментом Определение координат.
+                center: [54.5982, 36.2550],
+                // Уровень масштабирования. Допустимые значения:
+                // от 0 (весь мир) до 19.
+                zoom: 17
+            });
+
+            myGeoObject = new ymaps.GeoObject({
+                geometry: {
+                    type: "Point", // тип геометрии - точка
+                    coordinates: [54.5982, 36.2550] // координаты точки
+                }, properties: {
+                    hintContent: "Калуга"
+                }
+            }, {
+                // Включаем отображение в форме геодезических кривых.
+                geodesic: true,
+                // Задаем ширину в 5 пикселей.
+                strokeWidth: 5,
+                // Задаем цвет линии.
+                strokeColor: "#666"
+            });
+            myMap.geoObjects.add(myGeoObject);
+            myMap.balloon.open(myMap.getCenter(), {
+                contentBody: '<strong>пер. Дальний, д.11</strong>',
+                //  contentHeader: 'ООО КАРЬЕР',
+                //  contentBody:
+
+            },
+                {
+                    // Опции балуна. В данном примере указываем, что балун не должен иметь кнопку закрытия.
+                    closeButton: false,
+                    preset: 'islands#yellowDotIcon',
+                    panelMaxMapArea: 0
+
+                });
+
+
+
+            fitMapToViewport();
+
+
+        }
+
+
+
+        function fitMapToViewport() {
+            var mapi = document.getElementById('ymap');
+            mapi.style.height = 1;
+
+            // Вызываем перерасчет размеров контейнера карты.
+            // Это может происходить автоматически при помощи опции autoFitToViewport
+            // http://api.yandex.ru/maps/doc/jsapi/beta/ref/reference/Map.xml#param-options.autoFitToViewport
+            //   map.container.fitToViewport();
+        }
+
+
+
+
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/94748716" style="position:absolute; left:-9999px;" alt="" /></div></noscript>

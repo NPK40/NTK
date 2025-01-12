@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - pesok.pro</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+  
+    <link rel="stylesheet" href="~/pesok.pro.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        @await Html.PartialAsync("HeaderTwo")
+    </header>
+
+
+
+    <div class="container mx-auto mt-10">
+        <div style="font-family: OpenSansRegular;color:#434559;" class="text-base"><a style="color:#fc5203;" href="/">Главная</a><span style="color:#fc5203;"> - @ViewData["Header"] - </span> @ViewData["NamePage"] </div>
+    </div>
+    <div class="px-0 ">
+        <div class="container ">
+
+            <div class="grid grid-cols-12  grip-4 p-0 sm:p-3 lg:p-0 md:p-0 my-8">
+                <div class=" col-span-4 lg:col-span-4 xl:col-span-3 hidden  sm:hidden lg:inline">
+                    @await Component.InvokeAsync("MenuProduct")
+                </div>
+                <div class="pageContent col-span-12 sm:col-span-12 lg:col-span-8 xl:col-span-9 MontserratRegular text-base text-black leading-8 font-medium text-justify  tracking-wide">
+                    <h1>@ViewBag.Title</h1>
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        @await Html.PartialAsync("Footer")
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+
+<style>
+    .pageContent :global(h1) {
+        font-family: BebasNeueRegular;
+        font-size: 40px;
+        color: #505164;
+        padding: 0em 0em 0.5em 0em;
+        text-align: left;
+        line-height: 1.2;
+    }
+
+    .pageContent :global(h2) {
+        font-family: BebasNeueRegular;
+        font-size: 32px;
+        color: #505164;
+        padding: 0.7em 0em 0.5em 0em
+    }
+
+    .pageContent :global(h3) {
+        font-family: OpenSansBold;
+        font-size: 20px;
+        color: #555;
+        padding: 0.7em 0em 0.5em 0em
+    }
+
+    .pageContent :global(p) {
+        font-family: OpenSansRegular;
+        font-size: 17px;
+        color: #292c48;
+        text-align: justify;
+        padding: 0.4em 0em;
+        line-height: 1.9;
+    }
+
+    .pageContent :global(ul) {
+        font-family: OpenSansRegular;
+        font-size: 16px;
+        color: #333;
+        text-align: justify;
+        line-height: 1.7;
+        list-style-image: url('/image/kv.png');
+        padding-left: 3em;
+    }
+
+    .pageContent :global(li) {
+        padding: 0.4em 0em 0.4em 0.9em;
+    }
+
+    .pageContent :global(.table_price) {
+        width: 100%;
+        margin: 2em 0em;
+    }
+
+    .pageContent :global(.table_price th) {
+        background-color: #ff5e14;
+        color: #fff;
+        font-family: BebasNeueRegular;
+        padding: 1em 2em;
+        font-weight: 300;
+    }
+
+    .pageContent :global(.table_price td) {
+        background-color: #fff;
+        color: #000;
+        font-family: OpenSansRegular;
+        padding: 0.4em 1em 0.4em 1em;
+        font-weight: 300;
+    }
+
+    .pageContent :global(.table_price td:nth-child(2n) ) {
+        text-align: right;
+    }
+
+    .pageContent :global(.table_price tr:nth-child(2n) td) {
+        background-color: #f6f6f6;
+    }
+</style>

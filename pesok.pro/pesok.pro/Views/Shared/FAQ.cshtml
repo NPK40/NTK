@@ -1,0 +1,186 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<script>
+    // import { fly } from 'svelte/transition';
+    // import { fade } from 'svelte/transition';
+
+    // import {imask} from 'svelte-imask';
+
+const options = { 
+  mask: '+{7}(000)000-00-00' 
+};
+
+function accept() {
+  console.log('accepted');
+}
+
+
+
+let Name = "";
+let Phone = "";
+let Message= {
+  Name: "",
+  Phone: "",
+  Email: "",
+  Text: "",
+  Type: "Вопрос"
+};
+
+
+
+async function SentMessage()
+ {
+
+  let options = {
+method: 'POST',
+body: JSON.stringify(Message),
+headers: {
+ 'Content-Type': 'application/json;charset=utf-8',
+}};
+console.log(Message.Phone.length);
+if (Message.Text.length != 0 && Message.Name.length!=0 && Message.Email.length!=0 && Message.Email.indexOf('@@')!=-1 )
+{
+ let data =await  fetch('https:mail.pgs40.ru/api/mes', options)
+.then(res =>  res.json())
+.then(res => console.log(res));
+Message.Phone = "";
+Message.Name = "";
+Message.Text = "";
+Message.Email = "";
+ }
+ else {
+      alert("Пожалуйста, укажите корректные данные");
+ }
+ }
+
+
+
+	let visible = false;
+    let flagPlus = ["+", "+", "+", "+", "+"];
+    function FAG_List(i) {
+      if (flagPlus[i] === "+")
+            { flagPlus[i] = "-"; }
+       else 
+            { flagPlus[i] = "+"; }
+        /*Проверка чтобы открыте запросы не превышали область блока*/
+        let ch = 0;
+        let index = 0;
+        while (index < 5)
+         {   
+            index++;
+           if ( flagPlus[index] === "-") ch++;
+         }
+         if ( ch > 2) {
+         index = 0;
+           while (index < 5)
+            {
+               if ( index != i && flagPlus[index] === "-"  )
+                  { flagPlus[index] = "+";
+                    break;
+                  }
+               index++;
+           }
+         }
+	}
+
+
+
+</script>
+<style>
+  .header_h {height: 1560px;}
+  .Header1 {font-family: BebasNeueRegular; font-size:55px ; color:#434559;}
+  .Header3 {font-family: OpenSansBold; font-size:15px ; color:#ff5e14;}
+  .HeaderFAQ {font-family: BebasNeueRegular; font-size:27px ; color:#232534;}
+  input::placeholder {
+  color: #ccc;
+  font-family: OpenSansRegular;
+  font-style: italic;
+  padding-left: 1em;
+}
+media (max-width: 1240px) { .HeaderFAQ { font-size:27px;}}
+media (max-width: 1024px) {.HeaderFAQ { font-size:25px;}}
+media (max-width: 700px) {.HeaderFAQ { font-size:20px;}}
+media (max-width: 550px) {.HeaderFAQ { font-size:18px;} }
+media (max-width: 480px) {.HeaderFAQ { font-size:16px;}}
+.gradBut{
+    background: #ff5e14; /* Для старых браузров */
+    background:linear-gradient(-135deg, transparent 15px, #ff5e14 0);
+    color:#ffefe8;
+    border:0;
+  }
+
+  .gradBut:hover {
+   
+    background: #fc5203; /* Для старых браузров */
+    background:linear-gradient(-135deg, transparent 15px, #fc5203 0);
+    color:#fff;
+    border:0;
+  }
+</style>
+<div class="bg-no-repeat bg-center header_h mt-0 lg:mt-0" style="background-image: url('/image/Page/faq.png');" >
+    <div id="header2" class="container mx-auto ">
+        <div class="text-center pt-24 lg:pt-32">
+            <h3 class="Header3 mb-4">FAQ</h3>
+            <h1 class="Header1 leading-tight">ЧАСТЫЕ ВОПРОСЫ</h1>
+            <div class="grid gap-1 grid-cols-1  w-5/6 mt-20 mx-auto text-left">
+              <div class="col-span-1 bg-white px-16 py-8 relative">
+                  <div class="HeaderFAQ">Какой минимальный объемвы доставляете?</div>
+                  @* <div class="absolute right-10 top-5 lg:top-7 w-10"> *@
+                  @*    <button class="text-6xl" on:click={() => FAG_List(0)} style="color:#ff5e14;">{flagPlus[0]}</button> *@
+                  @* </div> *@
+
+	                <p transition:fade class="text-lg border-t-2 mt-8 pt-5" style="font-family: OpenSansRegular;border-color:#ff5e14;" >
+                        Минимальный объём заказа: щебень от 10 куб.м, песок от 20 куб.м
+	                </p>
+
+              </div>
+              <div class="col-span-1 bg-white px-16 py-8 relative">
+                <div class="HeaderFAQ">Каким транспортом вы осуществляете доставку?</div>
+                @* <div class="absolute right-10 top-5 lg:top-7 w-10"> *@
+                @*     <button class="text-6xl" on:click={() => FAG_List(1)} style="color:#ff5e14;">{flagPlus[1]}</button> *@
+                @*  </div> *@
+
+                 <p transition:fade class="text-lg border-t-2 mt-8 pt-5" style="font-family: OpenSansRegular;border-color:#ff5e14;" >
+                    В основном наш автопарк состоит из самосвалов:MAN — 25м3; Тонар — 30 м3, но есть и КАМАЗы — 10 м3
+                 </p>
+
+              </div>
+              
+              <div class="col-span-1 bg-white px-16 py-8 relative">
+                <div class="HeaderFAQ">Работаете ли вы с физическими лицами?</div>
+                @* <div class="absolute right-10 top-5 lg:top-7 w-10"> *@
+                @*     <button class="text-6xl" on:click={() => FAG_List(3)} style="color:#ff5e14;">{flagPlus[3]}</button> *@
+                @*  </div> *@
+ 
+                  <p transition:fade class="text-lg border-t-2 mt-8 pt-5" style="font-family: OpenSansRegular;border-color:#ff5e14;" >
+                    Да, мы работаем не только с юридическими лицами, но с физическими лицами.
+                 </p>
+ 
+              </div>
+
+              
+            </div>
+        </div>
+        <div class="w-5/6 mx-auto mt-2 pt-12 pb-24" style="background-color:#2e3153;">
+            <div class="text-center  text-3xl" style="font-family: BebasNeueRegular;color:#fff">ответим на любые ваши вопросы</div>
+            <div class="grid gap-8 grid-cols-1 lg:grid-cols-3  w-5/6 mx-auto">
+                <div class="col-span-1 " >
+                    <input class="text-white border-b w-full mt-4 h-12" type="text" style="background: rgba(108, 110, 134, 0.01);font-family: OpenSansRegular;" bind:value={Message.Name}  placeholder="Ваше имя*">
+                </div>
+                <div class="col-span-1"  >
+                    <input class="text-white border-b w-full mt-4 h-12" type="text" style="background: rgba(108, 110, 134, 0.01);font-family: OpenSansRegular;" bind:value={Message.Email} placeholder="Электронная почта*">
+                </div>
+                <div class="col-span-1 hidden lg:block" ></div>
+                <div class="col-span-1 lg:col-span-2" >
+                    <input class="text-white border-b w-full  h-12" type="text" style="background: rgba(108, 110, 134, 0.01);font-family: OpenSansRegular;" bind:value={Message.Text} placeholder="Текст">
+                </div>
+                <div class="col-span-1 pt-7 text-center lg:text-left lg:pt-0" >
+                    <div on:click={SentMessage}  class="text-sm border  px-10 py-6  gradBut inline" style="font-family:OpenSansMedium;">Отправить вопрос</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

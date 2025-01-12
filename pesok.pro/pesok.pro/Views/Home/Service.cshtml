@@ -1,0 +1,101 @@
+﻿@{
+    ViewData["Title"] = ViewBag.Title;
+    Layout = "~/Views/Shared/_LayoutMenu.cshtml";
+}
+
+<style>
+    .pageContent :global(h1) {
+        font-family: BebasNeueRegular;
+        font-size: 40px;
+        color: #505164;
+        padding: 0em 0em 0.5em 0em;
+        text-align: left;
+        line-height: 1.2;
+    }
+
+    .pageContent :global(h2) {
+        font-family: BebasNeueRegular;
+        font-size: 32px;
+        color: #505164;
+        padding: 0.7em 0em 0.5em 0em
+    }
+
+    .pageContent :global(h3) {
+        font-family: OpenSansBold;
+        font-size: 20px;
+        color: #555;
+        padding: 0.7em 0em 0.5em 0em
+    }
+
+
+    p {
+        font-family: OpenSansRegular;
+        font-size: 17px;
+        color: #292c48;
+        text-align: justify;
+        padding: 0.4em 0em;
+        line-height: 1.9;
+    }
+
+    ul {
+        font-family: OpenSansRegular;
+        font-size: 16px;
+        color: #333;
+        text-align: justify;
+        line-height: 1.7;
+        list-style-image: url('/image/kv.png');
+        padding-left: 3em;
+    }
+
+    li {
+        padding: 0.4em 0em 0.4em 0.9em;
+    }
+
+    .table_price {
+        width: 100%;
+        margin: 2em 0em;
+    }
+
+        .table_price th {
+            background-color: #ff5e14;
+            color: #fff;
+            font-family: BebasNeueRegular;
+            padding: 1em 2em;
+            font-weight: 300;
+        }
+
+        .table_price td {
+            background-color: #fff;
+            color: #000;
+            font-family: OpenSansRegular;
+            padding: 0.4em 1em 0.4em 1em;
+            font-weight: 300;
+        }
+
+            .table_price td:nth-child(2n) {
+                text-align: right;
+            }
+
+    h2 {
+        font-family: BebasNeueRegular;
+        font-size: 32px;
+        color: #505164;
+        padding: .7em 0 .5em;
+    }
+
+    h1 {
+        font-family: BebasNeueRegular;
+        font-size: 40px;
+        color: #505164;
+        padding: 0 0 .5em;
+        text-align: left;
+        line-height: 1.2;
+    }
+
+    .table_price tr:nth-child(2n) td {
+        background-color: #f6f6f6;
+    }
+</style>
+@Html.Raw(ViewBag.Context)
+
+

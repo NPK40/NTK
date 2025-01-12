@@ -1,0 +1,115 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<script>
+    import  FullMenuSite  from '../../../routes/Store';
+    const listmenu = $FullMenuSite ;
+    let screenWidth = 0;
+    let article_razdel ;
+    let kolScreen = 3;
+    $: {article_razdel = listmenu.filter(item => item.section == "ArticleMenu" && item.bodypage!=null).sort(compareMenu);
+       let len = article_razdel.length;
+       if ( screenWidth > 768 ) {
+        kolScreen = 2;
+       }
+       else {
+        kolScreen = 0;
+       }
+       article_razdel.splice(kolScreen, len-(kolScreen + 1))
+       console.log(len);
+       function compareMenu(a, b) {
+        if (parseInt(a.index) > parseInt(b.index)) return 1;
+        if (parseInt(a.index) < parseInt(b.index)) return -1;
+         return 0;
+    }
+    }
+
+    function kitcut(text, limit) {
+                                text = text.trim();
+                                if( text.length <= limit) return text;
+
+                                text = text.slice( 0, limit);
+                                const lastSpace = text.lastIndexOf(" ");
+
+                                if( lastSpace > 0) {
+                                    text = text.substr(0, lastSpace);
+                                }
+                                return text;
+                            }
+</script>
+<style>
+    .Header3 {
+        font-family: OpenSansBold;
+        font-size: 15px;
+        color: #ff5e14;
+    }
+
+    .Header3-2 {
+        font-family: BebasNeueBold;
+        font-size: 21px;
+        color: #ff5e14;
+    }
+
+    .Header1 {
+        font-family: BebasNeueRegular;
+        font-size: 55px;
+        color: #434559;
+    }
+
+    .gradient {
+        display: inline-block;
+        position: relative;
+        line-height: 0;
+    }
+
+        .gradient:after {
+            content: "";
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .gradient:hover:after {
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: transparent;
+            background-image: linear-gradient(to left, #ff5e14, #ff5e14);
+            opacity: 0.8;
+        }
+
+        .gradient:before {
+            content: "";
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+</style>
+<div class="bg-white  mt-24 lg:mt-36">
+    <div class="container mx-auto px-5 lg:px-0 ">
+        <h3 class="Header3 text-center lg:text-left">Что нового?</h3>
+        <h1 class="Header1">НОВОСТИ И СТАТЬИ</h1>
+        <div class="inline-block float-left lg:float-right lg:-mt-10" style="font-family:OpenSansMedium;color: #bbbdc7;">
+            <img class="inline" src="/image/Icon/Article.png" alt="Все статьи">
+            <span class="Header3 inline underline underline-offset-2 ml-2">Все статьи</span>
+        </div>
+        <div class="grid gap-5 grid-cols-1  md:grid-cols-3  w-full  mt-16 mb-32">
+            @* {#each article_razdel as r} *@
+
+            @* <div class="col-span-1 pl-3"> *@
+            @*     <a class="gradient" href='{r.url}'><img src={r.Image} alt={r.title} title={r.title}></a> *@
+            @*     <p class="Header3-2 mt-4 ">{r.Date}</p> *@
+            @*     <h2 class="text-3xl  leading-tight" style="font-family:BebasNeueRegular;color:#232534;">{r.title}</h2> *@
+            @*     <p class="pr-10 " style="font-family: OpenSansRegular;">{kitcut(r.MiniText, 150)}...</p> *@
+            @*     <a style="color:#ff5e14;font-family: OpenSansRegular;margin-top: 1em;" class="inline underline underline-offset-2" href="/">Читать дальше</a> *@
+            @* </div> *@
+            @* {/each} *@
+
+
+        </div>
+    </div>
+</div>
