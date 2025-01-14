@@ -29,7 +29,7 @@
     }
 
     
-    p{
+    .pageContent :global(p) {
         font-family: OpenSansRegular;
         font-size: 17px;
         color: #292c48;
@@ -38,7 +38,7 @@
         line-height: 1.9;
     }
 
-    ul {
+    .pageContent :global(ul) {
         font-family: OpenSansRegular;
         font-size: 16px;
         color: #333;
@@ -48,16 +48,16 @@
         padding-left: 3em;
     }
 
-    li {
+    .pageContent :global(li) {
         padding: 0.4em 0em 0.4em 0.9em;
     }
 
-    .table_price {
+    .pageContent :global(.table_price) {
         width: 100%;
         margin: 2em 0em;
     }
 
-   .table_price th {
+   .pageContent :global(.table_price th) {
         background-color: #ff5e14;
         color: #fff;
         font-family: BebasNeueRegular;
@@ -65,7 +65,7 @@
         font-weight: 300;
     }
 
-    .table_price td {
+    .pageContent :global(.table_price td) {
         background-color: #fff;
         color: #000;
         font-family: OpenSansRegular;
@@ -73,27 +73,11 @@
         font-weight: 300;
     }
 
-    .table_price td:nth-child(2n)  {
+    .pageContent :global(.table_price td:nth-child(2n))  {
         text-align: right;
     }
 
-    h2 {
-        font-family: BebasNeueRegular;
-        font-size: 32px;
-        color: #505164;
-        padding: .7em 0 .5em;
-    }
-
-    h1 {
-        font-family: BebasNeueRegular;
-        font-size: 40px;
-        color: #505164;
-        padding: 0 0 .5em;
-        text-align: left;
-        line-height: 1.2;
-    }
-
-   .table_price tr:nth-child(2n) td {
+    .pageContent :global(.table_price tr:nth-child(2n) td)  {
         background-color: #f6f6f6;
     }
 </style>
