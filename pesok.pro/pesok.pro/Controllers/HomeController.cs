@@ -59,9 +59,8 @@ namespace pesok.pro.Controllers
             // else return HttpNotFound();
         }
 
-
-       [Route("catalog/{url?}")]
-        public IActionResult Catalog( string url = "sand")
+        [Route("catalog/{url?}")]
+        public IActionResult Catalog(string url = "sand")
         {
             DBWork db = new DBWork();
             MenuEntry entry = new MenuEntry();
@@ -77,13 +76,29 @@ namespace pesok.pro.Controllers
                 ViewBag.KeyWord = page.Keywords;
                 ViewBag.Description = page.Description;
                 ViewBag.NamePage = entry.Header;
-               ViewBag.Header = "Каталог";
-                
+                ViewBag.Header = "Каталог";
+
             }
-           
-           // if (page.Html != "")
-                return View();
-           // else return HttpNotFound();
+
+            // if (page.Html != "")
+            return View();
+            // else return HttpNotFound();
+        }
+
+
+        [Route("article/{url?}")]
+        public IActionResult Article( string url = "sand")
+        {
+            DBWork db = new DBWork();
+            ViewBag.TypeMenu = "Article";
+            ViewBag.Header = "Статьи";
+          
+            List<ArticleListPage> articles = db.GetListArticle(url);
+    
+         //   ViewBag.NamePage = entry.Header;
+            ViewBag.Url = url;
+            return View(articles);
+       
         }
 
         [Route("About")]
@@ -103,9 +118,6 @@ namespace pesok.pro.Controllers
             ViewBag.Header = "Контакты";
             return View();
         }
-
-       
-
 
 
         public IActionResult Privacy()

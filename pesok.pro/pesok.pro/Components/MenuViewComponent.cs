@@ -17,6 +17,10 @@ namespace pesok.pro.Components
             {
                 typemenu = "ServiceMenu";
             }
+            if (menu == "Article")
+            {
+                typemenu = "ArticleMenu";
+            }
 
 
             List<MenuEntry> prodmenu = _db.GetListMenu(typemenu);
