@@ -31,7 +31,7 @@
         @foreach (var link in Model)
         {
 
-            <li @( act == link.Url ? "class=selected" : "")><a asp-controller="Home" asp-action=@ViewData["TypeMenu"] asp-route-url=@link.Url >@link.Header</a> </li>
+            <li @( act == link.Url ? "class=selected" : "")><a asp-controller="Home" asp-action=@ViewData["TypeMenu"] asp-route-url=@link.Url asp-route-razdel="">@link.Header</a> </li>
         }
     </ul>
 </div>
