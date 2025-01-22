@@ -11,12 +11,12 @@
 			    @foreach (var link in Model)
 			   {
 				  <div class="grid grid-cols-5  grip-10 mb-12" >
-					<div class="col-span-1"><a rel='prefetch' href=@link.Url><img src=@link.Image_Src alt=@link.Title title=@link.Title></a></div>
+					<div class="col-span-1"><a rel='prefetch' asp-controller="Home" asp-action="Article" asp-route-url=@link.Url asp-route-razdel=@link.Razdel><img src=@link.Image_Src alt=@link.Title title=@link.Title></a></div>
 					<div class="col-span-4 pl-10">
 						<span class="time_art rounded-md  p-2 mr-2">@link.Date</span>
-						<a rel='prefetch' href=@link.Url><span style="font-family:BebasNeueRegular ;" class="text-black text-2xl">@link.Title</span></a>
+						<a rel='prefetch' asp-controller="Home" asp-action="Article" asp-route-url=@link.Url asp-route-razdel=@link.Razdel><span style="font-family:BebasNeueRegular ;" class="text-black text-2xl">@link.Title</span></a>
 						<div class="descript mt-4">@link.Minitext  ...</div>
-						<a class="link_art " rel='prefetch' href=@link.Title>Подробнее</a>
+						<a class="link_art " asp-controller="Home" asp-action="Article" asp-route-url=@link.Url asp-route-razdel=@link.Razdel action rel='prefetch'>Подробнее</a>
 					</div>
 				  </div>  
                }

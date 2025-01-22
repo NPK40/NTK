@@ -22,10 +22,7 @@ app.UseAuthorization();
 
 app.UseEndpoints(endpoints =>
 {
-  /*  endpoints.MapControllerRoute(
-         name: "Catalog",
-      pattern: "{url?}",
-    defaults: new { controller = "Home", action = "Catalog" });*/
+   
 
 
     endpoints.MapControllerRoute(

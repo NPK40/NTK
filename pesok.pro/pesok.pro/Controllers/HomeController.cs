@@ -84,19 +84,30 @@ namespace pesok.pro.Controllers
             return View();
             // else return HttpNotFound();
         }
-
-
-        [Route("article/{url?}")]
-        public IActionResult Article( string url = "sand")
+        [Route("article")]
+        [Route("article/{url}")]
+        [Route("article/{razdel}/{url}")]
+        public IActionResult Article( string razdel = "", string url = "")
         {
+            if (razdel == "")
+            {
+                razdel = url;
+                url = "";
+                if (razdel == "")
+                {
+                    razdel = "sand";
+                }
+            }
+            
+            
             DBWork db = new DBWork();
             ViewBag.TypeMenu = "Article";
             ViewBag.Header = "Статьи";
           
-            List<ArticleListPage> articles = db.GetListArticle(url);
+            List<ArticleListPage> articles = db.GetListArticle(razdel);
     
          //   ViewBag.NamePage = entry.Header;
-            ViewBag.Url = url;
+            ViewBag.Url = razdel;
             return View(articles);
        
         }
