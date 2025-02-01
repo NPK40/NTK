@@ -89,6 +89,8 @@ namespace pesok.pro.Controllers
         [Route("article/{razdel}/{url}")]
         public IActionResult Article( string razdel = "", string url = "")
         {
+            DBWork db = new DBWork();
+            List<ArticleListPage> articles = new List<ArticleListPage>();
             if (razdel == "")
             {
                 razdel = url;
@@ -97,14 +99,25 @@ namespace pesok.pro.Controllers
                 {
                     razdel = "sand";
                 }
+                articles = db.GetListArticle(razdel);
+                ViewBag.TypeMenuArt = "List";
+                
             }
-            
-            
-            DBWork db = new DBWork();
+            else {
+                articles = db.GetListArticle(razdel, url);
+                ViewBag.TypeMenuArt = "Page";
+            }
+            if (razdel != "")
+            {
+                ViewBag.NamePage = articles.First().Header;
+            }
+
+
+
             ViewBag.TypeMenu = "Article";
             ViewBag.Header = "Статьи";
           
-            List<ArticleListPage> articles = db.GetListArticle(razdel);
+           
     
          //   ViewBag.NamePage = entry.Header;
             ViewBag.Url = razdel;

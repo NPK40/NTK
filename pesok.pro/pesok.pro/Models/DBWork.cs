@@ -67,7 +67,7 @@ namespace pesok.pro.Models
             Url = p.Url,
             Description =  x.Description,
             Date= ((DateTime)x.Date).ToString("dd.MM.yyyy"),
-            Html = x.Html,
+  //          Html = x.Html,
             Indx = p.Indx,
             Image = x.Image,
             Image_Src = x.Image_Src,
@@ -76,6 +76,31 @@ namespace pesok.pro.Models
             Priority = p.Priority,
             Razdel = p.Razdel,
             Title = p.Title,
+            }).ToList();
+
+            return list;
+        }
+
+        public List<ArticleListPage> GetListArticle(string razdel, string url)
+        {
+            db = new PesokContext();
+            List<ArticleListPage> list = new List<ArticleListPage>();
+            list = db.MenuEntries.Where(x => x.Section == "ArticleMenu" && x.Razdel == razdel && x.Visible == true && x.Url == url).Join(db.Articles, p => p.Indx, x => x.Id, (p, x) => new ArticleListPage
+            {
+                Id = p.Id,
+                Header = p.Header,
+                Url = p.Url,
+                Description = x.Description,
+                Date = ((DateTime)x.Date).ToString("dd.MM.yyyy"),
+                Html = x.Html,
+                Indx = p.Indx,
+                Image = x.Image,
+                Image_Src = x.Image_Src,
+                Keywords = x.Keywords,
+                Minitext = x.Minitext,
+                Priority = p.Priority,
+                Razdel = p.Razdel,
+                Title = p.Title,
             }).ToList();
 
             return list;

@@ -2,8 +2,14 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    string[] flagPlus = { "+", "+", "+", "+", "+" };
 }
+
 <script>
+
+ 
+
+
     // import { fly } from 'svelte/transition';
     // import { fade } from 'svelte/transition';
 
@@ -61,30 +67,31 @@ Message.Email = "";
 	let visible = false;
     let flagPlus = ["+", "+", "+", "+", "+"];
     function FAG_List(i) {
-      if (flagPlus[i] === "+")
-            { flagPlus[i] = "-"; }
-       else 
-            { flagPlus[i] = "+"; }
-        /*Проверка чтобы открыте запросы не превышали область блока*/
-        let ch = 0;
-        let index = 0;
-        while (index < 5)
-         {   
-            index++;
-           if ( flagPlus[index] === "-") ch++;
-         }
-         if ( ch > 2) {
-         index = 0;
-           while (index < 5)
+
+
+            for (let j = 0 ; j < 5 ; j++)
             {
-               if ( index != i && flagPlus[index] === "-"  )
-                  { flagPlus[index] = "+";
-                    break;
+                if ( i === j )
+                {
+               
+                  if ($("#bt" + i).text() === '+') {
+                     $("#bt" + i).text('-')
+                    $("#bl" + i).show();
+                    }
+                  else {
+                     $("#bt" + i).text('+')
+                    $("#bl" + i).hide();
                   }
-               index++;
-           }
-         }
+                }
+                else 
+                {
+                  $("#bt" + j).text('+')
+                $("#bl" + j).hide();
+                }
+            }
+
 	}
+
 
 
 
@@ -120,46 +127,71 @@ media (max-width: 480px) {.HeaderFAQ { font-size:16px;}}
     border:0;
   }
 </style>
+
 <div class="bg-no-repeat bg-center header_h mt-0 lg:mt-0" style="background-image: url('/image/Page/faq.png');" >
     <div id="header2" class="container mx-auto ">
-        <div class="text-center pt-24 lg:pt-32">
+        <div class="text-center pt-16 lg:pt-24">
             <h3 class="Header3 mb-4">FAQ</h3>
             <h1 class="Header1 leading-tight">ЧАСТЫЕ ВОПРОСЫ</h1>
-            <div class="grid gap-1 grid-cols-1  w-5/6 mt-20 mx-auto text-left">
+            <div class="grid gap-1 grid-cols-1  w-5/6 mt-12 mx-auto text-left">
               <div class="col-span-1 bg-white px-16 py-8 relative">
                   <div class="HeaderFAQ">Какой минимальный объемвы доставляете?</div>
-                  @* <div class="absolute right-10 top-5 lg:top-7 w-10"> *@
-                  @*    <button class="text-6xl" on:click={() => FAG_List(0)} style="color:#ff5e14;">{flagPlus[0]}</button> *@
-                  @* </div> *@
+                  <div class="absolute right-10 top-5 lg:top-7 w-10">
+                        <button class="text-6xl" id="bt0" onclick="FAG_List(0)" style="color:#ff5e14;">-</button>
+                    </div>
 
-	                <p transition:fade class="text-lg border-t-2 mt-8 pt-5" style="font-family: OpenSansRegular;border-color:#ff5e14;" >
+                    <p id="bl0" class="text-lg border-t-2 mt-8 pt-5" style="font-family: OpenSansRegular;border-color:#ff5e14;">
                         Минимальный объём заказа: щебень от 10 куб.м, песок от 20 куб.м
 	                </p>
 
               </div>
               <div class="col-span-1 bg-white px-16 py-8 relative">
                 <div class="HeaderFAQ">Каким транспортом вы осуществляете доставку?</div>
-                @* <div class="absolute right-10 top-5 lg:top-7 w-10"> *@
-                @*     <button class="text-6xl" on:click={() => FAG_List(1)} style="color:#ff5e14;">{flagPlus[1]}</button> *@
-                @*  </div> *@
+                <div class="absolute right-10 top-5 lg:top-7 w-10">
+                        <button id="bt1" class="text-6xl" onclick="FAG_List(1)" style="color:#ff5e14;">+</button>
+                    </div>
 
-                 <p transition:fade class="text-lg border-t-2 mt-8 pt-5" style="font-family: OpenSansRegular;border-color:#ff5e14;" >
+                    <p id="bl1" class="hidden text-lg border-t-2 mt-8 pt-5" style="font-family: OpenSansRegular;border-color:#ff5e14;">
                     В основном наш автопарк состоит из самосвалов:MAN — 25м3; Тонар — 30 м3, но есть и КАМАЗы — 10 м3
                  </p>
 
               </div>
               
               <div class="col-span-1 bg-white px-16 py-8 relative">
-                <div class="HeaderFAQ">Работаете ли вы с физическими лицами?</div>
-                @* <div class="absolute right-10 top-5 lg:top-7 w-10"> *@
-                @*     <button class="text-6xl" on:click={() => FAG_List(3)} style="color:#ff5e14;">{flagPlus[3]}</button> *@
-                @*  </div> *@
- 
-                  <p transition:fade class="text-lg border-t-2 mt-8 pt-5" style="font-family: OpenSansRegular;border-color:#ff5e14;" >
-                    Да, мы работаем не только с юридическими лицами, но с физическими лицами.
+                    <div class="HeaderFAQ">Как быстро вы осуществляете доставку?</div>
+                <div class="absolute right-10 top-5 lg:top-7 w-10">
+                        <button id="bt2" class="text-6xl" onclick="FAG_List(2)" style="color:#ff5e14;">+</button>
+                    </div>
+
+                    <p id="bl2" class="hidden text-lg border-t-2 mt-8 pt-5" style="font-family: OpenSansRegular;border-color:#ff5e14;">
+                        По возможнсти осуществляем доставку в день заказа, но если заказов много, то на следующий день .
                  </p>
  
               </div>
+
+                <div class="col-span-1 bg-white px-16 py-8 relative">
+                    <div class="HeaderFAQ">Работаете ли вы с физическими лицами?</div>
+                    <div class="absolute right-10 top-5 lg:top-7 w-10">
+                        <button id="bt3" class="text-6xl" onclick="FAG_List(3)" style="color:#ff5e14;">+</button>
+                    </div>
+
+                    <p id="bl3" class="hidden text-lg border-t-2 mt-8 pt-5" style="font-family: OpenSansRegular;border-color:#ff5e14;">
+                        Да, мы работаем не только с юридическими лицами, но с физическими лицами.
+                    </p>
+
+                </div>
+
+                <div class="col-span-1 bg-white px-16 py-8 relative">
+                    <div class="HeaderFAQ">Как можно оплатить доставку?</div>
+                    <div class="absolute right-10 top-5 lg:top-7 w-10">
+                        <button id="bt4" class="text-6xl" onclick="FAG_List(4)" style="color:#ff5e14;">+</button>
+                    </div>
+
+                    <p id="bl4" class=" hidden text-lg border-t-2 mt-8 pt-5" style="font-family: OpenSansRegular;border-color:#ff5e14;">
+                        Доставку можно оплатить по безналичному расчету, так и по карте или наличными при разгрузке.
+                    </p>
+
+                </div>
 
               
             </div>

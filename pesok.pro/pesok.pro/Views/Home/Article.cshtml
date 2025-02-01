@@ -7,26 +7,34 @@
 <div class="pageContent col-span-12 sm:col-span-12 lg:col-span-8 xl:col-span-9 MontserratRegular text-base text-black leading-8 font-medium text-justify  tracking-wide">
 		<div class="bg-white"  >
 			<div  class="container pageContent mx-auto mb-24">
-			 
-			    @foreach (var link in Model)
-			   {
-				  <div class="grid grid-cols-5  grip-10 mb-12" >
-					<div class="col-span-1"><a rel='prefetch' asp-controller="Home" asp-action="Article" asp-route-url=@link.Url asp-route-razdel=@link.Razdel><img src=@link.Image_Src alt=@link.Title title=@link.Title></a></div>
-					<div class="col-span-4 pl-10">
-						<span class="time_art rounded-md  p-2 mr-2">@link.Date</span>
-						<a rel='prefetch' asp-controller="Home" asp-action="Article" asp-route-url=@link.Url asp-route-razdel=@link.Razdel><span style="font-family:BebasNeueRegular ;" class="text-black text-2xl">@link.Title</span></a>
-						<div class="descript mt-4">@link.Minitext  ...</div>
-						<a class="link_art " asp-controller="Home" asp-action="Article" asp-route-url=@link.Url asp-route-razdel=@link.Razdel action rel='prefetch'>Подробнее</a>
+			@if (ViewData["TypeMenuArt"] == "List")
+			{
+				@foreach (var link in Model)
+				{
+					<div class="grid grid-cols-5  grip-10 mb-12" >
+						<div class="col-span-1"><a rel='prefetch' asp-controller="Home" asp-action="Article" asp-route-url=@link.Url asp-route-razdel=@link.Razdel><img src=@link.Image_Src alt=@link.Title title=@link.Title></a></div>
+						<div class="col-span-4 pl-10">
+							<span class="time_art rounded-md  p-2 mr-2">@link.Date</span>
+							<a rel='prefetch' asp-controller="Home" asp-action="Article" asp-route-url=@link.Url asp-route-razdel=@link.Razdel><span style="font-family:BebasNeueRegular ;" class="text-black text-2xl">@link.Title</span></a>
+							<div class="descript mt-4">@link.Minitext  ...</div>
+							<a class="link_art " asp-controller="Home" asp-action="Article" asp-route-url=@link.Url asp-route-razdel=@link.Razdel action rel='prefetch'>Подробнее</a>
+						</div>
 					</div>
-				  </div>  
-               }
-			</div>
+				}
+			}
+			else 
+			{
+				<h1>@Model.First().Title</h1>
+				@Html.Raw(Model.First().Html);
+				
+			}
+		</div>
 		 </div>
 	  </div>	 
 
 
 <style>
-	.pageContent :global(h1) {
+	.pageContent h1 {
 		font-family: BebasNeueRegular;
 		font-size: 40px;
 		color: #505164;
@@ -35,21 +43,21 @@
 		line-height: 1.2;
 	}
 
-	.pageContent :global(h2) {
+	.pageContent h2 {
 		font-family: BebasNeueRegular;
 		font-size: 32px;
 		color: #505164;
 		padding: 0.7em 0em 0.5em 0em
 	}
 
-	.pageContent :global(h3) {
+	.pageContent :h3 {
 		font-family: OpenSansBold;
 		font-size: 20px;
 		color: #555;
 		padding: 0.7em 0em 0.5em 0em
 	}
 
-	.pageContent :global(p) {
+	.pageContent p {
 		font-family: OpenSansRegular;
 		font-size: 17px;
 		color: #292c48;
@@ -58,7 +66,7 @@
 		line-height: 1.9;
 	}
 
-	.pageContent :global(ul) {
+	.pageContent ul {
 		font-family: OpenSansRegular;
 		font-size: 16px;
 		color: #333;
@@ -68,7 +76,7 @@
 		padding-left: 3em;
 	}
 
-	.pageContent :global(li) {
+	.pageContent li {
 		padding: 0.4em 0em 0.4em 0.9em;
 	}
 
