@@ -254,3 +254,4 @@ E:\-=Сайты=-\Pesok\pesok.pro\pesok.pro\obj\Release\net6.0\scopedcss\Views\S
 E:\-=Сайты=-\Pesok\pesok.pro\pesok.pro\obj\Release\net6.0\scopedcss\Views\Shared\_LayoutMenu.cshtml.rz.scp.css
 E:\-=Сайты=-\Pesok\pesok.pro\pesok.pro\obj\Release\net6.0\scopedcss\Views\Shared\_LayoutTWO.cshtml.rz.scp.css
 E:\-=Сайты=-\Pesok\pesok.pro\pesok.pro\obj\Release\net6.0\pesok.pro.csproj.CopyComplete
+E:\-=Сайты=-\Pesok\pesok.pro\pesok.pro\obj\Release\net6.0\scopedcss\Views\Shared\_LayoutArticles.cshtml.rz.scp.css

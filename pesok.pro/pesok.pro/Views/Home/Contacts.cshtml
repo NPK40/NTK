@@ -4,6 +4,55 @@
     Layout = "~/Views/Shared/_LayoutTWO.cshtml";
 }
 
+
+<div class="px-0">
+
+    <div class="bg-white  mt-8 lg:mt-10">
+        <div class="mapp">
+
+            <h1 class="Header1">КОНТАКТЫ</h1>
+            <div class="grid gap-0 grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 mb-24">
+                <div class="col-span-1">
+                    <div class="px-1">
+                        <div class="kontakt">
+                            <img alt="Телефон" src="/image/Contact/phone.png" />
+                            <div class="des-phone">
+                                <div class="text_header">Наши телефоны</div>
+                                <div class="text_adres">+7 (930) 849-50-50</div>
+
+                            </div>
+                        </div>
+                        <div class="kontakt">
+                            <img alt="Адрес" src="/image/Contact/Metka.png">
+                            <div class="des-phone">
+                                <div class="text_header">Адрес офиса</div>
+                                <div class="text_adres">248031, г. Калуга, пер. Дальний, д.11</div>
+
+                            </div>
+                        </div>
+
+                        <div class="kontakt">
+                            <img alt="Email" src="/image/Contact/email.png" />
+                            <div class="des-phone">
+                                <div class="text_header">Электронная почта</div>
+                                <div class="text_adres underline" style="color:#fc5203;">npk40@yandex.ru</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-span-1 sm:col-span-1 lg:col-span-2" style="padding:0px;">
+                    <div class="p-0 " style="height:630px;">
+                        <div id="ymap"></div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <style>
     .Header1 {
         font-family: BebasNeueRegular;
@@ -50,68 +99,20 @@
                 margin-top: 0.2em;
             }
 </style>
-<div class="px-0">
-
-    <div class="bg-white  mt-8 lg:mt-10">
-        <div class="container mx-auto ">
-
-            <h1 class="Header1">КОНТАКТЫ</h1>
-            <div class="grid gap-0 grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 mb-24">
-                <div class="col-span-1">
-                    <div class="px-1">
-                        <div class="kontakt">
-                            <img alt="Телефон" src="/image/Contact/phone.png" />
-                            <div class="des-phone">
-                                <div class="text_header">Наши телефоны</div>
-                                <div class="text_adres">+7 (930) 849-50-50</div>
-
-                            </div>
-                        </div>
-                        <div class="kontakt">
-                            <img alt="Адрес" src="/image/Contact/Metka.png">
-                            <div class="des-phone">
-                                <div class="text_header">Адрес офиса</div>
-                                <div class="text_adres">248031, г. Калуга, пер. Дальний, д.11</div>
-
-                            </div>
-                        </div>
-
-                        <div class="kontakt">
-                            <img alt="Email" src="/image/Contact/email.png" />
-                            <div class="des-phone">
-                                <div class="text_header">Электронная почта</div>
-                                <div class="text_adres underline" style="color:#fc5203;">npk40@yandex.ru</div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-span-1 sm:col-span-1 lg:col-span-2" style="padding:0px;">
-                    <div class="p-0 " style="height:630px;">
-                        <div id="ymap"></div>
-
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <script>
    
     let myMap;
     let myGeoObject;
+    $(".mapp").ready(
+        function()
+        {
+          
+           setTimeout(init, 500);
+      
+        }
+    );
 
-
-    onMount(async () => {
-        setTimeout(init, 500);
-
-
-    });
-
-    //  ymaps.ready(init);
     function init() {
         // Создание карты.
         myMap = new ymaps.Map("ymap", {
@@ -173,4 +174,6 @@
         // http://api.yandex.ru/maps/doc/jsapi/beta/ref/reference/Map.xml#param-options.autoFitToViewport
         //   map.container.fitToViewport();
     }
+
+    
 </script>  

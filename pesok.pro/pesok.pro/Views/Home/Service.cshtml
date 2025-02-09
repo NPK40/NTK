@@ -4,7 +4,7 @@
 }
 
 <style>
-    .pageContent :global(h1) {
+    .pageContent h1 {
         font-family: BebasNeueRegular;
         font-size: 40px;
         color: #505164;
@@ -13,22 +13,22 @@
         line-height: 1.2;
     }
 
-    .pageContent :global(h2) {
+    .pageContent h2 {
         font-family: BebasNeueRegular;
         font-size: 32px;
         color: #505164;
         padding: 0.7em 0em 0.5em 0em
     }
 
-    .pageContent :global(h3) {
+    .pageContent h3 {
         font-family: OpenSansBold;
         font-size: 20px;
         color: #555;
         padding: 0.7em 0em 0.5em 0em
     }
 
-
-    .pageContent :global(p) {
+    
+    .pageContent p {
         font-family: OpenSansRegular;
         font-size: 17px;
         color: #292c48;
@@ -37,7 +37,7 @@
         line-height: 1.9;
     }
 
-    .pageContent :global(ul) {
+    .pageContent ul {
         font-family: OpenSansRegular;
         font-size: 16px;
         color: #333;
@@ -47,39 +47,39 @@
         padding-left: 3em;
     }
 
-    .pageContent :global(li) {
+    .pageContent li {
         padding: 0.4em 0em 0.4em 0.9em;
     }
 
-    .pageContent :global(.table_price) {
+    .pageContent .table_price {
         width: 100%;
         margin: 2em 0em;
     }
 
-    .pageContent :global(.table_price th) {
-            background-color: #ff5e14;
-            color: #fff;
-            font-family: BebasNeueRegular;
-            padding: 1em 2em;
-            font-weight: 300;
-        }
+   .pageContent .table_price th {
+        background-color: #ff5e14;
+        color: #fff;
+        font-family: BebasNeueRegular;
+        padding: 1em 2em;
+        font-weight: 300;
+    }
 
-    .pageContent :global(.table_price td) {
-            background-color: #fff;
-            color: #000;
-            font-family: OpenSansRegular;
-            padding: 0.4em 1em 0.4em 1em;
-            font-weight: 300;
-        }
+    .pageContent .table_price td {
+        background-color: #fff;
+        color: #000;
+        font-family: OpenSansRegular;
+        padding: 0.4em 1em 0.4em 1em;
+        font-weight: 300;
+    }
 
-    .pageContent :global(.table_price td:nth-child(2n)) {
-                text-align: right;
-            }
+    .pageContent .table_price td:nth-child(2n)  {
+        text-align: right;
+    }
 
-    .pageContent :global(.table_price tr:nth-child(2n) td) {
+    .pageContent .table_price tr:nth-child(2n) td {
         background-color: #f6f6f6;
     }
-</style>
-@Html.Raw(ViewBag.Context)
+    </style>
+@Html.Raw(ViewBag.Context);
 
 

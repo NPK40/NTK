@@ -585,3 +585,4 @@ E:\-=Сайты=-\Pesok\pesok.pro\pesok.pro\obj\Release\net6.0\win-x86\refint\pe
 E:\-=Сайты=-\Pesok\pesok.pro\pesok.pro\obj\Release\net6.0\win-x86\pesok.pro.pdb
 E:\-=Сайты=-\Pesok\pesok.pro\pesok.pro\obj\Release\net6.0\win-x86\pesok.pro.genruntimeconfig.cache
 E:\-=Сайты=-\Pesok\pesok.pro\pesok.pro\obj\Release\net6.0\win-x86\ref\pesok.pro.dll
+E:\-=Сайты=-\Pesok\pesok.pro\pesok.pro\obj\Release\net6.0\win-x86\scopedcss\Views\Shared\_LayoutArticles.cshtml.rz.scp.css
